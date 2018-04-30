@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Social Life</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="social-cards">
+
+    <ion-card class="cards"color="mistyRose" >
+
+        <ion-item color="mistyRose">
+          <ion-avatar item-start>
+            <img src="assets/imgs/profile-images/avatar/img45.jpg">
+          </ion-avatar>
+          <h2>Khondaka Readul Islam</h2>
+          <p>November 5, 2017</p>
+        </ion-item>
+      
+        <img height="180px"  src="assets/imgs/profile-images/cardBackgroundImages/kalma-tayyaba.jpg">
+      
+        <ion-card-content>
+          <p class="justify">
+            
+              اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ
+              (1
+              <br>পাঠ করুন আপনার পালনকর্তার নামে যিনি সৃষ্টি করেছেন
+            <br> Proclaim! (or read!) in the name of thy Lord and Cherisher, Who created-</p>
+          
+          </ion-card-content>
+      
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small (tap)="tapEvent($event)"  >
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div > {{tap}} Likes </div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="text"></ion-icon>
+              <div>4 Comments</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <ion-note>
+              11h ago
+            </ion-note>
+          </ion-col>
+        </ion-row>
+      
+      </ion-card>
+
+      <ion-card class="cards"color="mistyRose" >
+
+          <ion-item color="mistyRose">
+            <ion-avatar item-start>
+              <img src="assets/imgs/profile-images/avatar/broka.jpg">
+            </ion-avatar>
+            <h2>Mrs. Khondakar</h2>
+            <p>December 9, 2017</p>
+          </ion-item>
+        
+          <img height="180px"  src="assets/imgs/profile-images/cardBackgroundImages/quran.jpg">
+        
+          <ion-card-content>
+            <p class="justify">
+              
+              
+              خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ
+              (2 <br>  সৃষ্টি করেছেন মানুষকে জমাট রক্ত থেকে।
+              <br> Created man, out of a (mere) clot of congealed blood:
+              </p>
+                          
+            </ion-card-content>
+        
+          <ion-row>
+            <ion-col>
+              <button ion-button icon-left clear small>
+                <ion-icon name="thumbs-up"></ion-icon>
+                <div  (tap)="tapEvent($event)" >{{tap}} Likes</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button icon-left clear small>
+                <ion-icon name="text"></ion-icon>
+                <div>41 Comments</div>
+              </button>
+            </ion-col>
+            <ion-col center text-center>
+              <ion-note>
+                25h ago
+              </ion-note>
+            </ion-col>
+          </ion-row>
+        
+        </ion-card>
+        <ion-fab right bottom>
+            <button ion-fab color="facebook"><ion-icon name="build"></ion-icon></button>
+            <ion-fab-list side="top">
+              <button ion-fab><ion-icon name="create"></ion-icon></button>
+              <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+              <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+              <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+                
+              </ion-fab-list>
+          </ion-fab>
+</ion-content>
+

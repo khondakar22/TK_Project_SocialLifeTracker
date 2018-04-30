@@ -1,0 +1,26 @@
+page-set-activities {
+    .txtPos{
+        text-align: center;
+    }
+
+
+    .sActivity {
+		position: relative;
+		
+		margin-top: 5rem;
+    
+	
+    }
+   
+    .sActivity button{
+        padding-top: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 2rem;
+        margin-top: 2rem; 
+    }
+
+    .larger {
+        font-size: 50px;
+    }
+}

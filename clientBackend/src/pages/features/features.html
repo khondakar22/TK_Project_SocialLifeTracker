@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Features</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+ 
+    <ion-slides zoom="true" pager preventClicks="false" parallax (ionSlideDidChange)="slideChanged()" >
+  <ion-slide *ngFor="let imgSlide of imgagesSlides" class="ionBorder">
+      <div class="swiper-zoom-container">
+        <ion-img width="180" height="180" [src]="imgSlide.image"></ion-img>
+      </div>
+        <h2>{{imgSlide.name}}</h2>
+        <p>{{imgSlide.description}}</p>
+
+    <ion-buttons>
+        <button  class="btnWidth" ion-button color="primary" (click)="enterPages()">Enter</button>
+    </ion-buttons>
+
+  </ion-slide>
+
+
+</ion-slides>
+</ion-content>

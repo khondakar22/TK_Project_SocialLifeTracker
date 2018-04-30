@@ -1,0 +1,113 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title class="smallpage" >Welcome</ion-title>
+    <ion-toolbar>
+        <ion-segment [(ngModel)]="segments">
+        <ion-segment-button value="singup" color="black1">
+          Signup
+        </ion-segment-button>
+    
+        <ion-segment-button value="signin" color="black1">
+          Sigin
+        </ion-segment-button>
+      </ion-segment>
+      </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+    <ion-content padding [ngSwitch]="segments">
+    
+    <ion-content *ngSwitchCase="'singup'">
+      <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+        <ion-list>
+          <ion-item>
+            <ion-label floating color="black1"><ion-icon ios="ios-person-add" md="md-person-add"></ion-icon> User Name</ion-label>
+            <ion-input
+              type="text"
+              
+              formControlName="userName"
+              required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating color="black1"><ion-icon ios="ios-person" md="md-person"></ion-icon> First Name</ion-label>
+            <ion-input
+              type="text"
+              formControlName="firstName"
+              required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating color="black1"><ion-icon ios="ios-person" md="md-person"></ion-icon> Last Name</ion-label>
+            <ion-input
+              type="text"
+              formControlName="lastName"
+              required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating color="black1"> <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email</ion-label>
+            <ion-input
+              type="email"
+              formControlName="emailAddress"
+              required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating color="black1"> <ion-icon ios="ios-key" md="md-key"></ion-icon> Password</ion-label>
+            <ion-input
+              type="password"
+              formControlName="password"
+              required
+              [minlength]="6"></ion-input>
+          </ion-item>
+          <ion-item>  
+            <ion-label floating color="black1"><ion-icon ios="logo-reddit" md="logo-reddit"></ion-icon> User Role</ion-label>
+            <ion-select formControlName="userRole">
+              <ion-option
+                *ngFor="let option of selectOptions"
+                [value]="option">{{ option }}
+            </ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <button ion-button block type="submit" [disabled]="!signUpForm.valid">Signup</button>
+      </form>
+    </ion-content>
+    
+    <ion-content *ngSwitchCase="'signin'">
+      <form [formGroup]="signInForm" (ngSubmit)="signIn()">
+        <ion-list>
+          <ion-item>
+            <ion-label floating color="black1"> <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email</ion-label>
+            <ion-input
+              type="email"
+              formControlName="emailAddress"
+              required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating color="black1"> <ion-icon ios="ios-key" md="md-key"></ion-icon> Password</ion-label>
+            <ion-input
+              type="password"
+              formControlName="password"
+              required
+              [minlength]="6"></ion-input>
+          </ion-item>
+        </ion-list>
+        <button ion-button block type="submit" [disabled]="!signInForm.valid">Signin</button>
+      </form>
+    </ion-content>
+    <br>
+    <br>
+    <br> 
+    
+    <h6 class="smallpage" *ngIf="!sigin">TeamCharlie[SocialLifeTracker]. <br>
+    For tracking your activities please Signin.</h6>
+    </ion-content>
+    
+    
+    
+    
+    
+    </ion-content>

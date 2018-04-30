@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Profile Picture</ion-title>
+  </ion-navbar>
+  
+</ion-header>
+<ion-content>
+  <h3 [hidden]="images.length !== 0" text-center>No Images found!</h3>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let img of images">
+
+      <ion-item tappable (click)="openImage(img)">
+        <ion-thumbnail item-start>
+          <img [src]="img.imageData">
+        </ion-thumbnail>
+        <h2>{{ img.desc }}</h2>
+        <button ion-button clear icon-only item-end>
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item-options side="right">
+        <button ion-button icon-only color="danger" (click)="deleteImage(img)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab (click)="presentActionSheet()">
+      <ion-icon name="camera"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>
+
+
+
+
+<ion-footer class="txtPos">
+  <ion-toolbar>
+    <ion-title>
+      <button color="gohstWhite" ion-button clear (click)="goToRootAgain()"> Back</button>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
+

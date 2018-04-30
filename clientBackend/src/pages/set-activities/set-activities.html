@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>setActivities</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+
+
+<ion-content padding class="sActivity">
+
+  <button (click)="goToSetWorking()" ion-button full block color="secondary" large>
+    <ion-icon name="walk" class="larger" ></ion-icon> </button>
+
+  <button (click)="goToSetDriving()" ion-button full block color="danger" large>
+    <ion-icon name="car" class="larger" ></ion-icon> </button>
+
+
+  <button (click)="goToSetCycling()" ion-button full block color="primary" large>
+    <ion-icon name="bicycle" class="larger" ></ion-icon>  </button>
+
+</ion-content>
+
+
+
+
+
+<ion-footer class="txtPos">
+  <ion-toolbar>
+    <ion-title>
+      <button color="gohstWhite" ion-button clear (click)="goToRootAgain()"> Back</button>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="social-cards">
+
+  <ion-card class="cards" color="mistyRose">
+    <img height="180px" src="assets/imgs/profile-images/avatar/img45.jpg">
+    <ion-card-content>
+      <h4>User Name: {{ location.userName }}</h4>
+      <h5>Full Name: {{ location.firstName }} {{ location.lastName }}  </h5>
+      <h5>Address: {{ location.formatedAddress }} </h5>
+      <h5>Email Address: {{ location.formatedAdres }} </h5>
+      <p class="justify"> Created Date:  {{location.created | date:'short'}} </p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small (tap)="tapEvent($event)">
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div> {{tap}} Likes </div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>4 Comments</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+</ion-content>
+
+
+<ion-footer  class="txtPos">
+    <ion-toolbar>
+      <ion-title ><button color="gohstWhite" ion-button clear (click)="goToRootAgain()" > Back</button></ion-title>
+    </ion-toolbar>
+  </ion-footer>

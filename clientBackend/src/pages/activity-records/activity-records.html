@@ -1,0 +1,146 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>activityRecords</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-toolbar>
+<ion-segment [(ngModel)]="activity">
+  <ion-segment-button value="walking" color="black1">
+    <ion-icon name="walk" class="larger"></ion-icon> Walking
+  </ion-segment-button>
+
+  <ion-segment-button value="cycling" color="black1">
+    <ion-icon name="bicycle" class="larger"></ion-icon> Cycling
+  </ion-segment-button>
+
+  <ion-segment-button value="driving" color="black1">
+    <ion-icon name="car" class="larger"></ion-icon> Driving
+  </ion-segment-button>
+</ion-segment>
+</ion-toolbar>
+
+<ion-content padding>
+  <ion-content padding [ngSwitch]="activity">
+
+    <ion-content *ngSwitchCase="'walking'">
+      <ion-grid *ngFor="let walkingDatas of walkingData">
+        <ion-row></ion-row>
+        <ion-row class="header">
+          <ion-col col-12>
+            <button class="icons">
+              <ion-icon name="people"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <h4 class="name"> <ion-icon name="walk" class="larger"></ion-icon> {{walkingDatas.activity}}</h4>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-4>
+            <ion-icon name="pin"></ion-icon> Start from -{{walkingDatas.startpoint}}
+          </ion-col>
+          <ion-col col-18>
+            <ion-icon name="pin"></ion-icon> End to- {{walkingDatas.startpoint}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-4>
+            <strong>Distance</strong> {{walkingDatas.distance}}  - Km 
+          </ion-col>
+          <ion-col col-8>
+            <strong>Time</strong> {{walkingDatas.timedelta}}
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </ion-content>
+
+    <ion-content *ngSwitchCase="'cycling'">
+        <ion-grid *ngFor="let cyclingDatas of cyclingData">
+            <ion-row></ion-row>
+            <ion-row class="header">
+              <ion-col col-12>
+                <button class="icons">
+                  <ion-icon name="people"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col col-12>
+                <h4 class="name"> <ion-icon name="bicycle" class="larger"></ion-icon>  {{cyclingDatas.activity}}</h4>
+              </ion-col>
+            </ion-row>
+           
+            <ion-row>
+              <ion-col col-4>
+                <ion-icon name="pin"></ion-icon> Start from -{{cyclingDatas.startpoint}}
+              </ion-col>
+              <ion-col col-18>
+                <ion-icon name="pin"></ion-icon> End to- {{cyclingDatas.startpoint}}
+              </ion-col>
+            </ion-row>
+    
+    
+            <ion-row>
+              <ion-col col-4>
+                <strong>Distance</strong> {{cyclingDatas.distance}}  - Km 
+              </ion-col>
+              <ion-col col-8>
+                <strong>Time</strong> {{cyclingDatas.timedelta}}
+              </ion-col>
+            </ion-row>
+    
+          </ion-grid>
+    </ion-content>
+
+    <ion-content *ngSwitchCase="'driving'">
+      <ion-grid *ngFor="let drivingDatas of drivingData">
+        <ion-row></ion-row>
+        <ion-row class="header">
+          <ion-col col-12>
+            <button class="icons">
+              <ion-icon name="people"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <h4 class="name"> <ion-icon name="bicycle" class="larger"></ion-icon>  {{drivingDatas.activity}}</h4>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-4>
+            <ion-icon name="pin"></ion-icon> Start from -{{drivingDatas.startpoint}}
+          </ion-col>
+          <ion-col col-18>
+            <ion-icon name="pin"></ion-icon> End to- {{drivingDatas.startpoint}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-4>
+            <strong>Distance</strong> {{drivingDatas.distance}}  - Km 
+          </ion-col>
+          <ion-col col-8>
+            <strong>Time</strong> {{drivingDatas.timedelta}}
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </ion-content>
+
+
+
+  </ion-content>
+
+
+</ion-content>

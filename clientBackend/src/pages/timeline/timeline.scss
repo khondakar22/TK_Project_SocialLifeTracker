@@ -1,0 +1,120 @@
+page-timeline {
+    #cd-timeline {
+    position: relative;
+    padding: 2em 0;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+  #cd-timeline::before {
+    /* this is the vertical line */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px;
+    height: 100%;
+    width: 4px;
+    background:brown;
+  }
+  
+  .cd-timeline-block {
+    position: relative;
+    margin: 2em 0;
+  }
+  .cd-timeline-block:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .cd-timeline-block:first-child {
+    margin-top: 0;
+  }
+  .cd-timeline-block:last-child {
+    margin-bottom: 0;
+  }
+  
+  .cd-timeline-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rosybrown, inset 0 50px 0 rosybrown, 0 3px 0 4px rosybrown;
+  }
+  .cd-timeline-img ion-icon {
+    display: block;
+    font-size: 2.5em;
+    color: white;
+    width:  40px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -13px;
+    margin-top: -17px;
+  }
+  
+  .cd-timeline-img.cd-picture {
+    background: #75ce66;
+  }
+  .cd-timeline-img.cd-movie {
+    background: #c03b44;
+  }
+  .cd-timeline-img.cd-location {
+    background: #f0ca45;
+  }
+
+  .cd-timeline-content {
+    position: relative;
+    margin-left: 60px;
+    background:rosybrown;
+    border-radius: 0.25em;
+    padding: 1em;
+    box-shadow: 0 3px 0 #d7e4ed;
+  }
+  .cd-timeline-content:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .cd-timeline-content h2 {
+    color: #303e49;
+  }
+  .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+    font-size: 13px;
+    font-size: 2rem;
+  }
+  .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+    display: inline-block;
+  }
+  .cd-timeline-content p {
+    margin: 1em 0;
+    line-height: 1.6;
+  }
+  .cd-timeline-content .cd-read-more {
+    float: right;
+    padding: .8em 1em;
+    background: #acb7c0;
+    color: white;
+    border-radius: 0.25em;
+  }
+  .no-touch .cd-timeline-content .cd-read-more:hover {
+    background-color: #bac4cb;
+  }
+  .cd-timeline-content .cd-date {
+    float: left;
+    padding: .8em 0;
+    opacity: .7;
+  }
+  .cd-timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    right: 100%;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-right: 7px solid rosybrown;
+  }
+  
+}

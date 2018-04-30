@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Timeline</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding="true">
+
+  <section id="cd-timeline">
+    <div *ngFor="let activity of setActivity" class="cd-timeline-block">
+
+        <div class="cd-timeline-img">
+          <ion-icon name="calendar"></ion-icon>
+        </div>
+        <!-- cd-timeline-img -->
+
+        <div class="cd-timeline-content">
+          <h2> Location : {{activity.startpoint}} </h2>
+          <p>Time: {{activity.start | date:'h:mm'}}</p>
+          <p>Activity: {{activity.activity}}</p>
+
+          <a href="#0" class="cd-read-more">Read more</a>
+          <span class="cd-date"> Date: {{activity.start | date:'dd/MM/yyyy'}}</span>
+          
+        </div>
+        <!-- cd-timeline-content -->
+    </div>
+    <!-- cd-timeline-block -->
+
+  </section>
+
+
+
+
+
+</ion-content>

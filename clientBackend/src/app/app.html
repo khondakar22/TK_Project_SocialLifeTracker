@@ -1,0 +1,26 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list *ngIf="token!==null" >
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+              <ion-icon [name]="p.icon" item-start></ion-icon> {{p.title}}
+      </button>
+    </ion-list>
+      <ion-list *ngIf="token==null" >
+        <button menuClose ion-item (click)="goToRootAgain()">
+                <ion-icon name="repeat" item-start></ion-icon> Please Loggin Again
+        </button>
+      </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content ></ion-nav>
+
+
+

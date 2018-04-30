@@ -1,0 +1,69 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Find Friends</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding="true">
+  <div #map id="map"></div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button block outline type="button" icon-left (click)="onLocateMe()">
+          <ion-icon name="locate"></ion-icon>
+          Locate me
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block outline type="button" icon-left (click)="onLocateFriends()">
+          <ion-icon name="map"></ion-icon>
+          Find Friends
+        </button>
+      </ion-col>
+    </ion-row>
+   
+      <ion-row  *ngFor="let location of locations; let i=index">
+        <ion-col *ngIf="hide">
+          <ion-card>
+            <ion-item>
+              <ion-avatar item-start>
+                <img src="assets/imgs/profile-images/avatar/img45.jpg">
+              </ion-avatar>
+              <h2>User Name: {{location.userName}} </h2>
+              <p>Address:{{location.formatedAddress}} </p>
+              <p>Last Active Time:{{location.created | date:'short'}} </p>
+             
+            </ion-item>
+
+            <ion-row>
+              <ion-col>
+                <button ion-button color="primary" full block (click)="viewProfile(location,i)">
+                  <ion-icon name='eye'></ion-icon> Profile View
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+
+
+  </ion-grid>
+
+</ion-content>
+
+
+
+<ion-footer class="txtPos">
+  <ion-toolbar>
+    <ion-title>
+      <button color="gohstWhite" ion-button clear (click)="goToRootAgain()"> Back</button>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
+
